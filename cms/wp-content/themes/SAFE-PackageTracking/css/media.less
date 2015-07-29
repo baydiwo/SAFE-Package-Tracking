@@ -1,0 +1,114 @@
+@screen-xs-max : 568px;
+@screen-sm-min : 568px;
+@screen-sm-max : 1024px;
+@screen-md-min : 1024px;
+@screen-md-max : 1200px;
+@screen-lg-min : 1200px;
+
+@imp : !important;
+// custom variables
+@media only screen and (max-width: 767px){
+
+}//tablet
+
+@media (max-width: @screen-xs-max) {
+
+	h1 {font-size: 20px - 4;}
+	h2 {font-size: 18px - 4; }
+	h3 {font-size: 16px - 4; }
+	h4 {font-size: 15px - 4; }
+	p {font-size: 10px;}
+
+	header {
+		.header-stuff {
+			.logo{border-right: 0;}
+			.subtitle h1 {line-height: 1.5em;}
+		}
+	}
+	footer {
+		.soc-info {
+			li {width: 50%;margin: 5px 0;float: left;text-align: center;
+				a {font-size: 10px;
+					[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+	                [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+	                    font-size: 15px;margin-right: 5px;
+	                }
+				}
+			}
+		}
+		.hotline {
+			text-align: center;
+			img {display: inline;max-width: 200px;}
+		}
+	}
+	article {
+		.banner {
+			.box {
+				position: relative;
+				margin: 10px 0;
+				height: auto;
+				width: 100%;
+				top: 0;
+				left: 0;
+				.track{
+					font-size: 20px;
+				}
+				.search {margin: 10px auto;}
+				.sub-track {word-wrap:break-word;}
+			}
+		}
+		.search-result .search-content {margin-top: 20px;}
+	}//article
+ }
+//ipad and tablet
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+	h1 {font-size: 20px - 2;}
+	h2 {font-size: 18px - 2; }
+	h3 {font-size: 16px - 2; }
+	h4 {font-size: 15px - 2; }
+	p {font-size: 10px + 2;}
+
+	header {
+		.header-stuff {
+			.subtitle h1 {line-height: 1.5em;margin-top: 39px;}
+		}
+	}
+	footer {
+		.soc-info {
+			li {width: 25%;margin: 5px 0;float: left;text-align: center;
+				a {font-size: 12px;
+					[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+	                [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+	                    font-size: 15px;margin-right: 5px;
+	                }
+				}
+			}
+		}
+		.hotline {
+			text-align: center;
+			img {display: inline;max-width: 320px;}
+		}
+	}
+	article {
+		.banner {
+			.box {
+				height: 93px;
+				width: 100%;
+				top: 50%;
+				margin-top: -93px / 2;
+				left: 50%;
+				.track{
+					font-size: 20px;
+				}
+				.search {margin: 10px auto;}
+				.sub-track {word-wrap:break-word;}
+			}
+		}
+		.search-result .search-content {margin-top: 20px;}
+	}//article
+
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+
+}

@@ -1,0 +1,267 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,800,400);
+@import "build/lesshat.less";
+@import "fonts/gothbookmed.css";
+@import "fonts/gothbook.css";
+@import "icon/flaticon.css";
+
+// shortcut and variables
+// fix variables
+@extraBold : 800;
+@bold : 700;
+@semiBold: 600;
+@normal : 400;
+@light : 300;
+@imp : !important;
+
+// custom variables
+@darkBlue : #1a2f5b;
+@blue : #164174;
+@blueSearch : #19305a;
+@yellow : #fba81a;
+@yellow404 : #fcb913;
+@white : #fff;
+@grey: #d4d4d5;
+@sans: 'Open Sans', sans-serif;
+@gotham : 'Conv_gothbook';
+@gothamMed : 'Conv_gothbookmed';
+
+@containerSize : ;
+
+.m(blue) {color : lighten(@blue , 15%);}
+.m(darkBlue) {color : lighten(@darkBlue , 15%);}
+.m(@x) when (iscolor(@x)) and (default())  {default-color: @blue}
+
+a {.transition(all 0.3s ease);
+	color: @blue;
+
+    // .mixin(@x) when (iscolor(@x)) and (default())  {default-color: @blue};
+	&:hover {text-decoration: none;
+        .m(blue);
+    }
+}
+b , strong {font-weight: @bold;}
+button , input {background: none; outline: none; border: none;}
+body {font: 12px/1.5em @sans; color: @blue;background: @white;}
+p {font: normal 14px/1.5em @sans;}
+.rounded {.border-radius(15px);}
+.no-padding {padding: 0;}
+.double-padding {padding: 30px;}
+
+//settings
+.container {max-width: @containerSize;}
+h1 {font-size: 20px;color: @blue; font-family: @sans; font-weight: @semiBold}
+h2 {font-size: 18px; color: @blue; font-weight: @normal;}
+h3 {font-size: 16px; color: @blue;}
+h4 {font-size: 15px; color: @blue;}
+p {color: @blue; font-weight: @normal; font-family: @gotham;}
+
+.form-group {
+    position: relative;
+    width: inherit;
+    input.form-control {
+        width: inherit;
+        position: relative;
+        height: 37px;
+        .border-radius(20px);
+        color: #999;
+        padding: 8px 20px;
+        margin: 0 auto;
+        .placeholder(#999);
+    }
+    .form-control-feedback {
+        right: 20px;
+        top: 2px;
+        color: #999;
+    }
+}// form group
+
+header {
+    border-top:9px solid @blue;
+    position: relative;
+    &:after {
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background: @yellow;
+        top: 0px;
+        left: 0px;
+    }
+    .header-stuff {
+        padding: 0 4%;
+        .logo {
+            padding: 0 50px 0 0;
+            margin:25px 0 0px 0;
+            border-right: 1px solid @grey;
+        }
+        .subtitle {
+            h1 {
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                font-weight: @light;
+                line-height: 6em;
+            }
+        }
+    }
+}//header
+footer {
+    padding: 0 0%;
+    // padding: 0 4%;
+    .address {
+        padding-bottom: 10px;
+        border-bottom: 1px solid @grey;
+        span {font-family: @gothamMed;font-weight: @normal;}
+    }
+    .soc-info {
+        margin-top: 10px;
+        a {
+            i {font-weight: @normal;vertical-align: middle;}
+            font-size: 13px;
+            font-weight: @bold;
+            color: @darkBlue;
+            vertical-align: middle;
+            &:hover {.m(darkBlue)}
+        }
+    }
+    .hotline {text-align: right;}
+}//footer
+article {
+    margin: 20px 0;
+    position: relative;
+    .search {
+        height: 37px;
+        width: 100%;
+    }
+    .banner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        img {width: 100%;}
+        height : convert(100%, pt);
+        .box {
+            width: 100%;
+            height: 170px;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -170px / 2;
+            margin-left: -100% / 2;
+            .track {
+                font-size: 48px;
+                color: @blue;
+                font-weight: @normal;
+                b {font-weight: @extraBold;}
+            }
+            .search {width: 290px;margin: 40px auto;}
+            .form-group {
+                input.form-control {
+                    width: 290px;
+                    background: #164174;
+                    color: @white;
+                    .placeholder(@white);
+                }
+                .form-control-feedback {color: @white;}
+            }// form group
+        }
+    }//banner
+    .not-found {
+        background: @yellow404;
+        border:1px solid #aa7d0f;
+        .border-radius(5px);
+        margin: 50px 0;
+        padding: 20px;
+        .img-alert {
+            margin-top: 20px;
+        }
+        .content {
+            h2 {font-weight: @bold;}
+        }
+        .search {
+            @pad: 37px;
+            margin-top: calc(~'34% - @{pad}');
+        }
+    }//not-found
+    .search-page {
+        padding-top: 20px;
+        border-top: 1px solid @grey;
+    }
+    .search-result {
+        padding: 30px 0 40px 0;
+        border-bottom: 1px solid @grey;
+        .track-info {
+            color: @blueSearch;
+            .border-radius(10px);
+            border: 1px solid #d4d4d5;
+            overflow: hidden;
+            .head {
+                width: 100%;
+                padding: 25px 30px;
+                background: #e0e0e0;
+                .icon {margin-top: 21px; margin-right: 10px;}
+                [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+                [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+                    font-size: 60px;
+                }
+                .number {font-size: 28px; font-weight: @bold;}
+            }//head
+            .order-details {
+                width: 100%;
+                padding: 25px 30px;
+                dl {margin-bottom: 0;
+                    dt {font-weight: @normal;}
+                    dt , dd {color: #787878;}
+                    dd {margin-bottom: 20px;
+                        &:last-child {margin-bottom: 0;}
+                    }
+                }
+            }
+        }//track-info
+        .search-content {
+            .border-radius(5px);
+            overflow: hidden;
+            .table {
+                border: 1px solid #d4d4d5;
+                table {margin-bottom: 0;}
+                th {background: #e0e0e0;color: @blue;font-size: 13px; text-align: left;width: 33.333%;
+                    &:first-child {padding-left: 10%;}
+                    &:nth-child(2) {text-align: center;}
+                    &:last-child {padding-right: 10%;text-align: right}
+                }
+                td {font-size: 14px;
+                    vertical-align: middle;
+                    width: 33.333%;
+                    i:before {margin-left: 0;vertical-align: middle;}
+                    &:first-child {padding-left: 10%;}
+                    &:nth-child(2) {text-align: center;}
+                    &:last-child {padding-right: 10%;text-align: right}
+                }
+                tr.picking-up {@col0:#e7f4ff;
+                    background: #e7f4ff;
+                    color: #164174;
+                    .transition(all 0.3s ease);
+                    &:hover {background: darken(@col0 , 10%); font-weight: @bold;}
+                }
+                tr.transit {@col1:#fef5e5;
+                    background: #fef5e5;
+                    color: #fba81a;
+                    .transition(all 0.3s ease);
+                    &:hover {background: darken(@col1 , 10%); font-weight: @bold;}
+                }
+                tr.delivered {@col2:#e2ffe3;
+                    background: #e2ffe3;
+                    color: #3c763d;
+                    .transition(all 0.3s ease);
+                    &:hover {background: darken(@col2 , 10%); font-weight: @bold;}
+                }
+                tr.returned {@col3:#ffd2d2;
+                    background: #ffd2d2;
+                    color: #9d1818;
+                    .transition(all 0.3s ease);
+                    &:hover {background: darken(@col3 , 10%); font-weight: @bold;}
+                }
+            }
+        }
+    }//search result
+}//article

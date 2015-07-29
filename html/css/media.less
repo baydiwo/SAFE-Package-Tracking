@@ -1,0 +1,181 @@
+@screen-xs-max : 568px;
+@screen-sm-min : 568px;
+@screen-sm-max : 1024px;
+@screen-md-min : 1024px;
+@screen-md-max : 1200px;
+@screen-lg-min : 1200px;
+
+@imp : !important;
+// custom variables
+@blue : #385ea5;
+@lightBlue : #5d87d6;
+@black : #111;
+@semiBlack : #333;
+@red : #c00;
+@green : #0c0;
+@lighterBlue : #dee3ec;
+@bgBox : #faf9f8;
+@white : #fff;
+
+@media only screen and (max-width: 767px){
+
+}//tablet
+
+@media (max-width: @screen-xs-max) {
+	h1 {font-size: 30px; }
+	h2 {font-size: 20px; }
+	h3 {font-size: 16px; }
+	h4 {font-size: 14px; }
+	p {font-size: 10px; }
+	body {font: 10px;}
+	.none {display: none @imp;}
+
+	a.more-details, input.more-details, button.more-details {font-size: 12px;}
+
+	header {height: 80px;
+		.current-user {margin-top: 0px;
+			.user-name {font-size: 14px;}
+		}
+		.logo {
+			img {width: 60px;}
+			h1 {margin-top: 5px;}
+		}
+		.navbar-toggle {margin: 0px;padding: 3px;}
+	}//header
+	.overlay nav {font-size: 16px @imp;}
+	.overlay ul li {height:calc(69% / 5) @imp; border-bottom: none @imp;}
+	.overlay .overlay-close {height: 20px @imp; width: 20px @imp;}
+
+	.toggle {
+		text-align: left @imp;
+	}
+
+	article {
+		nav {display: none;}
+		.box.box-connected-devices {margin-top: 30px;}
+		.box.box-diagnostic {margin-bottom: 30px;}
+		.dashboard {margin-top: 20px;
+			.box {
+				.details {
+					.info {margin-top: 0;}
+				}
+			}
+		}
+		dl.dl-horizontal , dl {
+			height:auto @imp;
+			dt,dd {
+				font-size: 10px;
+				margin-left: 0 @imp;
+				text-align: left @imp;
+				height: auto @imp;
+				}
+			}
+			dd {margin-bottom: 10px;}
+		.more-action {
+			.add-guest , .action{text-align: center @imp;}
+			.add-guest {margin-bottom: 10px;}
+		}
+	}//article
+	.content-connected-devices {
+
+
+		// responsive table
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		th {padding: 5px @imp;}
+
+		tr {  }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			position: relative;
+			padding:5px 5px 5px 60% @imp;
+			font-size: 10px;
+			text-align: left @imp;
+			img {width: 35px;}
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			white-space: nowrap;
+			font-size: 10px;
+		}
+		tr:nth-of-type(1) {display: none;}
+
+		/*
+		Label the data
+		*/
+		.table-connected-devices {
+			td:nth-of-type(1):before { content: "Devices"; }
+			td:nth-of-type(2):before { content: "IP Address"; }
+			td:nth-of-type(3):before { content: "Current State"; }
+			td:nth-of-type(4):before { content: "Interface"; }
+			td:nth-of-type(5):before { content: "Hostname"; }
+			td:nth-of-type(6):before { content: "MAC Address"; }
+			td:nth-of-type(7):before { content: "Network Access"; }
+
+			th {padding: 5px @imp;}
+		}
+		// end of responsive table
+	}//content-connected-devices
+	.table-my-network {
+		.more-details {padding: inherit @imp;}
+	}
+ }
+//ipad and tablet
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	h1 {font-size: 30px; }
+	h2 {font-size: 20px; }
+	h3 {font-size: 16px; }
+	h4 {font-size: 14px; }
+	p {font-size: 10px; }
+	body {font: 10px;}
+	.none {display: none @imp;}
+
+	a.more-details, input.more-details, button.more-details {font-size: 12px;}
+
+	header {height: 80px;
+		.current-user {margin-top: 0px;
+			.user-name {font-size: 14px;}
+		}
+		.logo {
+			img {width: 60px;}
+			h1 {margin-top: 5px;}
+		}
+		.navbar-toggle {margin: 0px;padding: 3px;}
+	}//header
+	.overlay nav {font-size: 16px @imp;}
+	.overlay ul li {height:calc(69% / 5) @imp;border-bottom: none @imp;}
+	.overlay .overlay-close {height: 20px @imp; width: 20px @imp;}
+
+	article {
+		nav {display: none; }
+		.dashboard {margin-top: 20px;
+			.box {
+				.details {
+					.info {margin-top: 0;}
+				}
+			}
+		}
+		dl.dl-horizontal , dl {height:auto @imp; dt,dd {font-size: 10px;margin-left: 0 @imp;}}
+	}
+
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+
+}
